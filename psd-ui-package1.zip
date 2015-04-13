@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1 user-scalable=no">
+  <title>JVL's Collection of Code</title>
+  <meta name="description" content="This is a project for a web development course at ACC">
+  <meta name="keywords" content="html5,css,education">
+  <meta name="author" content="jvl 51in52.com">  
+
+<!-- CSS - "css/foundation.css" is default -->
+<link rel="stylesheet" href="css/foundation.css">
+
+<!-- Modernizr 2.6.2 -->
+<script src="js/modernizr.custom.js"></script>
+
+<!-- Latest jQuery -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+  
+<!-- Google font -->
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- FONT AWESOME icons -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+
+<!-- Refine Slider -->
+	<link rel="stylesheet" href="js/refine-slider/refineslide.css" />
+	<link rel="stylesheet" href="js/refine-slider/css/refineslide-theme-dark.css" />
+
+    <!--[if lt IE 9]>
+        <script src="assets/js/respond.min.js"></script>
+	<![endif]-->	
+
+<!-- Layer slider -->
+<link rel="stylesheet" href="js/layerslider/css/layerslider.css" type="text/css">
+	<!--[if lt IE 9]>
+	<script src="../assets/js/html5.js"></script>
+	<![endif]-->
+
+<!-- Image hover effect -->
+<link rel="stylesheet" type="text/css" href="css/portfolio/component.css" />
+	
+<!-- Responsive nav -->
+<script>
+		// Create the dropdown base
+		$("<select />").appendTo("nav");
+
+		// Create default option "Go to..."
+		$("<option />", {
+		   "selected": "selected",
+		   "value"   : "",
+		   "text"    : "Go to..."
+		}).appendTo("nav select");
+
+		// Populate dropdown with menu items
+		$("nav a").each(function() {
+		 var el = $(this);
+		 $("<option />", {
+			 "value"   : el.attr("href"),
+			 "text"    : el.text()
+		 }).appendTo("nav select");
+		});
+</script>
+
+<!-- SUPERFISH NAVIGATION  -->
+<link rel="stylesheet" href="js/superfish-nav/dist/css/superfish.css" media="screen">
+<style> </style>
+<script src="js/superfish-nav/dist/js/hoverIntent.js"></script>
+<script src="js/superfish-nav/dist/js/superfish.js"></script>
+<script>
+
+		(function($){ //create closure so we can safely use $ as alias for jQuery
+
+			$(document).ready(function(){
+
+				// initialise plugin
+				var example = $('#example').superfish({
+					//add options here if required
+				});
+
+				// buttons to demonstrate Superfish's public methods
+				$('.destroy').on('click', function(){
+					example.superfish('destroy');
+				});
+
+				$('.init').on('click', function(){
+					example.superfish();
+				});
+
+				$('.open').on('click', function(){
+					example.children('li:first').superfish('show');
+				});
+
+				$('.close').on('click', function(){
+					example.children('li:first').superfish('hide');
+				});
+			});
+
+		})(jQuery);
+
+
+</script>
+
+<!-- Layer slider slide css -->
+	<style type="text/css" media="screen">
+			.ls-layer,
+			.ls-layer * {
+				font-family: 'Lato', sans-serif;
+				font-weight: 900;
+				text-shadow: none !important;
+			}
+			
+			.ls-s-1 {
+				font-weight: normal;
+			}
+			
+			.plus,
+			.plus2 {
+				width: 50px;
+				height: 50px; 
+				font-size: 46px;
+				line-height: 50px;
+			}
+
+			.plus {
+				color: #3b173d;
+			}
+
+			.plus2 {
+				color: #1e73be;
+			}
+
+			.text,
+			.text2 {
+				font-size: 26px; 
+			}
+
+			.text {
+				color: #eee;
+			}
+
+			.text2 {
+				color: #333;
+				font-size: 32px;
+				font-weight: 300;
+				padding: 10px 20px;
+				background: #fff;
+			}
+			
+			.text3 {
+				color: #fff;
+				font-size: 14px;
+				font-weight: 300;
+				padding: 10px 20px;
+				background: #333;
+			}
+			
+			.text4 {
+				color: #333;
+				font-size: 26px;
+				font-weight: 300;
+				padding: 10px 20px;
+				background: #fff;
+			}
+			
+			.text5 {
+				color: #fff;
+				font-size: 18px;
+				font-weight: 300;
+				padding: 10px 20px;
+				background: #3F92D2;
+			}
+			
+			.text6 {
+				color: #fff;
+				font-size: 32px;
+				font-weight: 300;
+				margin: 0 auto;
+			}
+			
+			.button_cta
+			{
+				background: #62A1D2;
+				padding: 0.8em 0.8em;
+				border-radius: 2px;
+				font-size: 16px;
+			}
+			
+			.button_cta a
+			{
+				color: #fff;
+			}
+			
+			.heading_1
+			{
+				font-size: 36px;
+				line-height: 46px;
+				font-family: 'Lato', sans-serif;
+				font-weight: 300;
+				color: #333;
+			}
+			
+			.p_1
+			{
+				color: #666;
+				font-family: 'Lato', sans-serif;
+				font-weight: 300;
+				font-size: 16px;
+				line-height: 22px;
+				width: 400px;
+			}
+			
+			.h_5
+			{
+				color: #666;
+				border-bottom: 2px solid #ccc;
+				border-radius: 0px;
+				font-weight: 900;
+				font-size: 14px;
+			}
+			
+			.special_1
+			{
+			color: #fff;
+			background: #2ECC71;
+			padding: 25px;
+			font-size: 18px;
+			line-height: 0px;
+			border-radius: 2px;
+			}
+			
+			.special_1:hover
+			{
+			background: #333;
+			-webkit-transition: background 800ms ease;
+			-moz-transition: background 800ms ease;
+			-ms-transition: background 800ms ease;
+			-o-transition: background 800ms ease;
+			transition: background 800ms ease;
+			}
+	</style>
+	
+</head>
+<body>
+	<!-- NAVIBAR -->
+	<div class="top_nav no-border">
+	<div class="row">
+	<div class="large-4 columns logo"><span>JVL.freeideaproject</span></div>
+	<div class="large-8 columns">
+	<nav>
+	<!-- Navigation -->
+	<ul class="sf-menu" id="example">
+			<li class="current">
+				<a href="index.html">Home</a>
+			</li>
+			<li>
+<ul>
+			  <li><a href="soon.html">First Version</a></li>
+						<li><a href="soon_2.html">Second Version</a></li>
+					</ul>
+			</li>
+			<li>
+				<a href="#chapters">Chapter Lessons</a>
+					<ul>
+						<li><a href="chapter1.html">The Language of the Web</a></li>
+						<li><a href="chapter2.html">Meet the "HT" in HTML</a></li>
+						<li><a href="chapter3.html">Web Page Construction</a></li>
+						<li><a href="chapter4.html">A Trip to Webville</a></li>
+						<li><a href="chapter5.html">Meeting the Media</a></li>
+						<li><a href="chapter6.html">Serious HTML</a></li>
+						<li><a href="chapter7.html">Adding a Little Style</a></li>
+						<li><a href="chapter8.html">Expanding Your Vocabulary</a></li>
+						<li><a href="chapter9.html">Getting Intimate With Elements</a></li>
+                       <li><a href="chapter10.html">Advanced Web Construction</a></li>
+						<li><a href="chapter11.html">Arrnging Elements</a></li>
+						<li><a href="chapter12.html">Modern HTML</a></li>
+						<li><a href="chapter13.html">Getting Tabular</a></li>
+						<li><a href="chapter14.html">Getting Interactive</a></li>
+					</ul>
+			</li>
+			<li>
+				<a href="https://github.com/jvlatacc/imed1416" target="_blank">GitHub Source</a>
+			</li>
+			<li id="nav_button"></li>
+	</ul><!-- end of Navigation -->
+		<!-- Navigation on Mobile Devices -->
+				<select> 
+					<option value="#" selected="selected">Menu</option> 
+					<option value="index.html">Home</option> 
+					<option value="#">Coming Soon</option>
+						<option value="soon.html">-- First Version</option>
+						<option value="soon_2.html">-- Second Version</option>
+					<option value="#">Pages</option>
+						<option value="404.html">-- 404 Not Found Page</option>
+						<option value="about.html">-- About</option>
+						<option value="components.html">-- All Components</option>
+						<option value="contact.html">-- Contact</option>
+						<option value="hosting.html">-- Hosting Home Page</option>
+						<option value="hosting_domains.html">-- Hosting Domain Registration</option>
+						<option value="portfolio.html">-- Portfolio</option>
+						<option value="services.html">-- Services First</option>
+						<option value="services_2.html">-- Services Second</option>
+					<option value="#">Blog</option>
+						<option value="blog.html">-- Blog Right Navigation</option>
+						<option value="blog_left_nav.html">-- Blog Left Navigation</option>
+						<option value="blog_single.html">-- Blog Single Post</option>
+					<option value="lukacvetinovic.com">Support</option>
+				</select>
+		<!-- end of Navigation on Mobile Devices -->
+	</nav>
+	</div>
+	</div>
+	</div>
+	<!-- end of NAVIBAR -->
+	<!-- SLIDER -->
+	<div id="layerslider-container-fw">
+			
+			<div id="layerslider" style="width: 100%; height: 450px; margin: 0px auto; ">
+
+				<div class="ls-layer" style="slidedirection: right; transition2d: 24,25,27,28; ">
+
+					<img src="assets/img/sakura2015.jpg" class="ls-bg" alt="Slide background">
+
+					<h4 class="ls-s-1 heading_1" style=" top:90px; left: 0px; slidedirection : fade; slideoutdirection : fade; durationin : 750; durationout : 750; easingin : easeOutQuint; rotatein : 90; rotateout : -90; scalein : .5; scaleout : .5;">Everything you need</h4>
+					<p class="ls-s-1 p_1" style=" top:140px; left: 0px; slidedirection : fade; slideoutdirection : fade; durationin : 750; durationout : 750; easingin : easeOutQuint; rotatein : 90; rotateout : -90; scalein : .5; scaleout : .5; ">This is must-have template for business people. You'll get elegant and clean design with lot of pre-made sections.</p>
+					<h5 class="ls-s-1 h_5" style=" top:220px; left: 0px; slidedirection : fade; slideoutdirection : fade; durationin : 850; durationout : 750; easingin : easeOutQuint; rotatein : 90; rotateout : -90; scalein : .5; scaleout : .5; ">Elegant Design</h5>
+					<h5 class="ls-s-1 h_5" style=" top:250px; left: 0px; slidedirection : fade; slideoutdirection : fade; durationin : 950; durationout : 750; easingin : easeOutQuint; rotatein : 90; rotateout : -90; scalein : .5; scaleout : .5; ">Responsive Layout</h5>
+					<h5 class="ls-s-1 h_5" style=" top:280px; left: 0px; slidedirection : fade; slideoutdirection : fade; durationin : 1050; durationout : 750; easingin : easeOutQuint; rotatein : 90; rotateout : -90; scalein : .5; scaleout : .5; ">Easy setup</h5>
+					<h5 class="ls-s-1 h_5" style=" top:310px; left: 0px; slidedirection : fade; slideoutdirection : fade; durationin : 1150; durationout : 750; easingin : easeOutQuint; rotatein : 90; rotateout : -90; scalein : .5; scaleout : .5; ">HTML5 and CSS3</h5>
+					
+					
+					<img class="ls-s-1"src="assets/img/mac_1.png"alt="LayerSlider on computer"style="top: 50px; left: 600px; slidedirection : right; slideoutdirection : right; durationin : 1500; delayin : 200; ">
+					<img class="ls-s-1"src="assets/img/ipad_1.png"alt="LayerSlider on computer"style="top: 150px; left: 870px; slidedirection : right; slideoutdirection : right; durationin : 2600; delayin : 100; ">
+					<img class="ls-s-1"src="assets/img/iphone_1.png"alt="LayerSlider on computer"style="top: 220px; left: 830px; slidedirection : bottom; slideoutdirection : bottom; durationin : 2200; delayin : 100; ">
+
+				</div>
+
+				<div class="ls-layer" style="slidedirection: right; transition2d: 110,111,112,113; ">
+
+					<img src="assets/img/portals2015.jpg" class="ls-bg" alt="Slide background">
+					<h5 class="ls-s-1 text6" style=" top:205px; left: 220px; slidedirection : bottom; slideoutdirection : slide; durationout : 750; easingin : easeOutQuint; delayin : 300; scalein : .8; scaleout : .8; ">Crafted with Zurb Foundation framework</h5>
+				</div>
+
+				<div class="ls-layer" style="slidedirection: right; transition2d: 92,93,105; ">
+
+					<img src="assets/img/reception2016.jpg" class="ls-bg" alt="Slide background">
+					<h5 class="ls-s-1 text4" style=" top:170px; left: 250px; slidedirection : fade; slideoutdirection : fade; durationout : 750; easingin : easeOutQuint; delayin : 300; scalein : .8; scaleout : .8; showuntil : 4000;">Nothing happens until something moves.</h5>
+					<h5 class="ls-s-1 text5" style=" top:222px; left: 581px; slidedirection : fade; slideoutdirection : fade; durationout : 750; easingin : easeOutQuint; delayin : 300; scalein : .8; scaleout : .8; showuntil : 4000;">Albert Einstein</h5>
+
+				</div>
+
+			</div>
+						
+		</div>
+	<!-- end of SLIDER -->
+	<!-- Call-To-Action 1 -->
+	<div class="cta_1">
+		<div class="row">
+			<div class="large-6 columns">
+				<div class="flex-video widescreen youtube">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/u6XAPnuFjJc" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div class="cta_1_text" >
+				<div class="large-6 columns">
+					<h1>Video Tutorials</h1>
+					<h5 class="subheader">All you need to customize Arcus template</h5>
+					<p>With Arcus template you'll get help file and well commented files. If you need additional help, before you contact us, check all tutorials for the Arcus. If you still can't find answer on your question/problem, please register on our <a target="_blank" href="#">forum</a> and open new thread.</p>
+					<a href="#" class="medium button optimized-button">Tutorials</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end of Call-To-Action 1 -->
+	<!-- Call-To-Action 2 -->
+	<div id="chapters" class="cta_2">
+		<!-- SHOWCASE HEADING -->
+			<div class="row">
+				<div class="large-12 columns big-h to-center">
+				<h1>Web and Interactive Development</h1>
+				<h5 class="subheader">Work based on chapters from the textbook "Head First HTML and CSS"</h5>
+				</div>
+			</div><!-- end of SHOWCASE HEADING -->
+		<!-- SHOWCASE -->
+		<div class="row">
+			<div class="large-12 columns">
+				<ul id="og-grid" class="og-grid">
+					<li>
+						<a href="#" data-largesrc="img/1.jpg" data-title="Discover" data-subtitle="App Design" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+							<img src="img/thumbs/1.jpg" alt="img01"/>
+						</a>
+					</li>
+					<li>
+						<a href="#" data-largesrc="img/2.jpg" data-title="Steak" data-subtitle="Icon Design" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+							<img src="img/thumbs/2.jpg" alt="img02"/>
+						</a>
+					</li>
+					<li>
+						<a href="#" data-largesrc="img/3.jpg" data-title="Close" data-subtitle="Icon Design" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+							<img src="img/thumbs/3.jpg" alt="img03"/>
+						</a>
+					</li>
+					<li>
+						<a href="#" data-largesrc="img/4.jpg" data-title="White Tiger" data-subtitle="White Chalk on Black Paper" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+							<img src="img/thumbs/4.jpg" alt="img04"/>
+						</a>
+					</li>
+					<li>
+						<a href="#" data-largesrc="img/5.jpg" data-title="Close" data-subtitle="Web Design" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+							<img src="img/thumbs/5.jpg" alt="img05"/>
+						</a>
+					</li>
+					<li>
+						<a href="#" data-largesrc="img/4.jpg" data-title="White Tiger" data-subtitle="White Chalk on Black Paper" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+							<img src="img/thumbs/4.jpg" alt="img04"/>
+						</a>
+					</li>
+					<li>
+						<a href="#" data-largesrc="img/6.jpg" data-title="Portico" data-subtitle="Branding Identity" data-description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.">
+							<img src="img/thumbs/6.jpg" alt="img06"/>
+						</a>
+					</li>
+					<li>
+						<a href="#" data-largesrc="img/5.jpg" data-title="Close" data-subtitle="Web Design" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+							<img src="img/thumbs/5.jpg" alt="img05"/>
+						</a>
+					</li>
+					<li>
+						<a href="#" data-largesrc="img/2.jpg" data-title="Steak" data-subtitle="Icon Design" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+							<img src="img/thumbs/2.jpg" alt="img02"/>
+						</a>
+					</li>
+					<li>
+						<a href="#" data-largesrc="img/1.jpg" data-title="White Tiger" data-subtitle="White Chalk on Black Paper" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+							<img src="img/thumbs/1.jpg" alt="img01"/>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div><!-- end of SHOWCASE -->
+		<!-- Looking for designers -->
+		<div class="row">
+			<div class="large-12 columns small-h to-center">
+			<h3>Are you looking for designers?</h3>
+			<h5 class="subheader">We are always ready to cooperate. We try to help everyone and to make this world more beautiful. <a target="_blank" href="contact.html">Contact us</a>!</h5>
+			</div>
+		</div><!-- end of Looking for designers -->
+	</div>
+	<!-- end of Call-To-Action 2 -->
+	<!-- Team members -->
+	<div id="team" class="team to-center">
+		<!-- Team member Heading -->
+		<div class="row">
+			<div class="large-12 columns big-h">
+					<h1>Current Crusades<h1>
+					<h5 class="subheader">At any given point I'm likely working with one of these excellent groups</h5>
+			</div>
+		</div>
+		<!-- end of Team member Heading -->
+		<div class="members">
+			<div class="row">
+				<!-- MEMBER 1 -->
+				<div class="large-3 columns responsive_space">
+					<img src="img/keepaustinfed-logo.jpg"></img>
+					<h3>Keep Austin Fed</h3>
+					<span data-tooltip class="has-tip" title="Diverting food waste to those in immediate need">Food Runner</span>
+					<hr class="dashed">
+					<div class="social_team">
+						<a target="_blank" href="#"><i class="icon-facebook"></i></a>
+						<a target="_blank" href="#"><i class="icon-twitter"></i></a>
+					</div>
+				</div><!-- end of MEMBER 1 -->
+				<!-- MEMBER 2 -->
+				<div class="large-3 columns responsive_space">
+					<img src="img/member2.jpg"></img>
+					<h3>Festival Beach Food Forest</h3>
+					<span data-tooltip class="has-tip" title="Keep everytinh on good track!">Manager</span>
+					<hr class="dashed">
+					<div class="social_team">
+						<a target="_blank" href="#"><i class="icon-facebook"></i></a>
+						<a target="_blank" href="#"><i class="icon-twitter"></i></a>
+					</div>
+				</div><!-- end of MEMBER 2 -->
+				<!-- MEMBER 3 -->
+				<div class="large-3 columns responsive_space">
+					<img src="img/member3.jpg"></img>
+					<h3>Texas NORML</h3>
+					<span data-tooltip class="has-tip" title="Build cool things!">Developer</span>
+					<hr class="dashed">
+					<div class="social_team">
+						<a target="_blank" href="#"><i class="icon-facebook"></i></a>
+						<a target="_blank" href="#"><i class="icon-twitter"></i></a>
+						<a target="_blank" href="#"><i class="icon-youtube"></i></a>
+					</div>
+				</div><!-- end of MEMBER 3 -->
+				<!-- MEMBER 4 -->
+				<div class="large-3 columns responsive_space">
+					<img src="img/member4.jpg"></img>
+					<h3>WebHosting.Coop Association</h3>
+					<span data-tooltip class="has-tip" title="Work for us!"><a href="#">We are hiring!</a></span>
+					<hr class="dashed">
+					<div class="social_team">
+						<a target="_blank" href="#"><i class="icon-plus"></i></a>
+					</div>
+				</div><!-- end of MEMBER 4 -->
+			</div>
+		</div>
+	</div>
+	<!-- end of Team members -->
+	<!-- Latest from blog -->
+	<div id="blog" class="latest_blog">
+		<div class="row">
+				<!-- Latest from blog Heading -->
+				<div class="large-4 columns big-h">
+					<h1>Blog</h1>
+					<h5 class="subheader">Learn, read, write, download free files</h5>
+					<a href="blog.html" class="medium button optimized-button">Arcus Blog</a>
+				</div><!-- end of Latest from blog Heading -->
+				<!-- LATEST BLOG POSTS -->
+				<!-- Latest Posts -->
+			<div class="large-4 columns">
+				<div class="space-bottom">
+				<h3>Latest Posts</h3>
+				<ul class="side-nav latest-posts">
+				  <li><a href="#">New Update on the way</a><p>July 21 - 10:25 PM</p></li>
+				  <li class="divider"></li>
+				  <li><a href="#">Aliens are coming very fast!</a><p>May 2 - 8:41 AM</p></li>
+				  <li class="divider"></li>
+				  <li><a href="#">TNT is not good</a><p>March 16 - 11:31 PM</p></li>
+				  <li class="divider"></li>
+				  <li><a href="#">HTML5 Tricks and Tips</a><p>January 28 - 2:55 AM</p></li>
+				</ul>
+				</div>
+			</div>
+			<!-- end of Latest Posts -->
+			<!-- Archives -->
+			<div class="large-4 columns">
+				<div class="space-bottom">
+				<h3>Archives</h3>
+				<ul class="side-nav">
+				  <li><a href="#">Jan 2013</a></li>
+				  <li class="divider"></li>
+				  <li><a href="#">Feb 2013</a></li>
+				  <li class="divider"></li>
+				  <li><a href="#">Mar 2013</a></li>
+				  <li class="divider"></li>
+				  <li><a href="#">Apr 2013</a></li>
+				</ul>
+				</div>
+			</div>
+			<!-- end of Archives -->
+		</div>
+	</div><!-- end of Latest from blog -->
+	<!-- Design, Quality, Support, Newsletter -->
+	<div class="row">
+	<div class="large-7 columns big-h">
+		<!-- Services -->
+				<div class="services-i-2">
+					<div class="large-6 columns optimized">
+					<i class="icon-globe"></i><span>Internation Company</span>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took.</p>
+					<a href="#" class="small button secondary">Read more</a>
+					</div>
+					<div class="large-6 columns optimized">
+					<i class="icon-lock"></i><span>Proteced with VAC</span>
+					<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal</p>
+					<a href="#" class="small button secondary">Read more</a>
+					</div>
+				</div>
+		<!-- end of Services-->
+		</div>
+		<div class="large-4 large-offset-1 columns medium-h">
+		<div class="columns">
+		<h3>Subscribe</h3>
+		<h5 class="subheader">Are You Ready to Rock n' Roll?</h5>
+		<br>
+		<br>
+		</div>
+		<!-- Begin MailChimp Signup Form -->
+			<form class="large-12 columns subscribe" action="http://lukacvetinovic.us7.list-manage2.com/subscribe/post?u=6055a8c9b58a6c966f313d5b7&amp;id=c2bf4586b2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" data-abide>
+			  <div class="email-field">
+				<input style="height: 45px;" type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email address" required>
+				<small class="error">Please, enter valid email address.</small>
+			  </div>
+			  <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button small">Subscribe</button>
+			</form><!--End mc_embed_signup-->
+		</div>
+	</div>
+	<!-- end of Design, Quality, Support, Newsletter -->
+	<!-- Footer_big -->
+	<div class="footer_big arcus-content">
+		<div class="row">
+			<div class="large-3 columns responsive_space">
+			<h3>Arcus</h3>
+			<div class="decorative-line"></div>
+			<p>Lorem ipsum ex vix illud nonummy, novum tation et his. At vix scriptaset patrioque scribentur, at pro fugit erts verterem molestiae, sed et vivendo ali Lorem ipsum ex vix illud nonummy</p>
+			</div>
+			<div class="large-3 columns responsive_space">
+			<h3>Partners</h3>
+			<div class="decorative-line"></div>
+				<ul>
+				  <li><a href="#top">Lorem Ipsum is simply</a></li>
+				  <li><a href="#features">Dummy text of the printing</a></li>
+				  <li><a href="#portfolio">And typesetting industry</a></li>
+				  <li><a href="#team">Lorem Ipsum has been</a></li>
+				</ul>
+			</div>
+			<div class="large-3 columns responsive_space">
+			<h3>Newsletter</h3>
+			<div class="decorative-line"></div>
+			<p>Get notices about our new releases! Special Offers and more...</p>
+			<a class="button footer-button" href="#">Sign Up</a>
+			</div>
+			<div class="large-3 columns responsive_space">
+			<h3>Hosted by:</h3>
+			<div class="decorative-line"></div>
+			<a target="_blank" href="http://www.webhosting.coop/"><img src="img/whc-logo.png"></img>WebHosting Cooperative Association</a>
+			</div>
+		</div>
+	</div>
+	<!-- end of Footer_big -->
+	<!-- Footer_small -->
+	<div class="footer_small">
+		<div class="row">
+			<div class="footer_small_copyright copyright_mobile">
+				<div class="large-6 columns">
+				<p>&#169; jvl.freeideaproject.org. All Rights Reserved!</p>
+				</div>
+			</div>
+			<div class="footer_small_social to-right">
+			<div class="large-6 columns">
+			<a target="_blank" href="#"><i class="icon-facebook"></i></a>
+			<a target="_blank" href="#"><i class="icon-twitter"></i></a>
+			</div>
+			</div>
+		</div>
+	</div><!-- end of Footer_small -->
+		
+
+  <script>
+  document.write('<script src=' +
+  ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+  '.js><\/script>')
+  </script>
+  
+  <script src="js/foundation.min.js"></script>
+  <!--
+  
+  <script src="js/foundation/foundation.js"></script>
+  
+  <script src="js/foundation/foundation.alerts.js"></script>
+  
+  <script src="js/foundation/foundation.clearing.js"></script>
+  
+  <script src="js/foundation/foundation.cookie.js"></script>
+  
+  <script src="js/foundation/foundation.dropdown.js"></script>
+  
+  <script src="js/foundation/foundation.forms.js"></script>
+  
+  <script src="js/foundation/foundation.joyride.js"></script>
+  
+  <script src="js/foundation/foundation.magellan.js"></script>
+  
+  <script src="js/foundation/foundation.orbit.js"></script>
+  
+  <script src="js/foundation/foundation.reveal.js"></script>
+  
+  <script src="js/foundation/foundation.section.js"></script>
+  
+  <script src="js/foundation/foundation.tooltips.js"></script>
+  
+  <script src="js/foundation/foundation.topbar.js"></script>
+  
+  <script src="js/foundation/foundation.interchange.js"></script>
+  
+  <script src="js/foundation/foundation.placeholder.js"></script>
+  
+  <script src="js/foundation/foundation.abide.js"></script>
+  
+  -->
+  
+  <script>
+    $(document).foundation();
+  </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/grid.js"></script>
+		<script>
+			$(function() {
+				Grid.init();
+			});
+		</script>
+  <script src="js/vendor/custom.modernizr.js"></script>
+  
+  <!-- Responsive nav -->
+    <script>
+  $("nav select").change(function() {
+  window.location = $(this).find("option:selected").val();
+  });
+  </script>
+
+  <!-- Layer slider -->
+  <script type="text/javascript"></script>
+		<script src="js/layerslider/jQuery/jquery-easing-1.3.js" type="text/javascript"></script>
+		<script src="js/layerslider/jQuery/jquery-transit-modified.js" type="text/javascript"></script>
+		<script src="js/layerslider/js/layerslider.transitions.js" type="text/javascript"></script>
+		<script src="js/layerslider/js/layerslider.kreaturamedia.jquery.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#layerslider').layerSlider({
+					skinsPath : 'js/layerslider/skins/',
+					skin : 'fullwidth',
+					thumbnailNavigation : 'hover',
+					hoverPrevNext : false,
+					responsive : false,
+					responsiveUnder : 960,
+					sublayerContainer : 960
+				});
+			});		
+		</script>	
+  
+  <!-- Skill Bar -->
+  <script>
+  jQuery('.skillbar').each(function(){
+	jQuery(this).find('.skillbar-bar').animate({
+		width:jQuery(this).attr('data-percent')
+	},2500);
+});
+  </script>
+</body>
+</html>
